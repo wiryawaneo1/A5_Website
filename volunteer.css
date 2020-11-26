@@ -1,0 +1,50 @@
+volunteerJoin {
+      background-image: url(contactBG.png);
+    background-color:#9AB8A1;
+   background-size: cover;
+     height: 100%; 
+  width:90%; 
+  margin: 0;
+  float:right; 
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "volunteerForm volunteerForm volunteerImg volunteerImg"
+    "volunteerForm volunteerForm volunteerImg volunteerImg"
+    "volunteerForm volunteerForm volunteerImg volunteerImg";
+}
+
+volunteerImg { grid-area: volunteerImg; }
+
+volunteerImg img {
+  position:absolute;
+  bottom:0;
+  right:10%;
+  height:auto;
+  width:80%;
+}
+volunteerForm { 
+    position:relative;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: volunteerForm; }
+
+.formCard {
+  height:80%;
+  width:80%;
+  background-color: #9AB8A1;
+  background-image: url(noise.png);
+  border-radius:3%;
+  box-shadow: 0px 30px 50px rgba(0,0,0,0.25);
+}
+
+.formCard * {
+  left:5%;
+}
+
+volunteerJoin * {
+  position: relative;
+}

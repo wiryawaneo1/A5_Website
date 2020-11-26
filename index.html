@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+  <!-- controls view and zoom levels -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>repl.it</title>
+  <!-- links the main css file for the main page and other styles -->
+	<link href="style.css" rel="stylesheet" type="text/css" />
+  <!-- css for mobile view (responsive) -->
+	<link href="mobileStyle.css" rel="stylesheet" type="text/css" />
+  <!-- plugin for favicon used for hamburger bar -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<!-- hamburger and i class for mobile hamburger menu -->
+	<div class="hamburger">
+<i class="fa fa-bars" style="font-size:24px; color:white"></i>
+	</div>
+  <!-- main navbar used for web-->
+	<navbar>
+		<ul>
+			<li>
+				<a href="#landing">Home</a>
+			</li>
+			<li>
+				<a href="#about">About</a>
+			</li>
+			<li>
+				<a href="#movement">Movement</a>
+			</li>
+			<li>
+				<a href="#volunteer">Volunteer</a>
+			</li>
+			<li>
+				<a href="#donate">Donate</a>
+			</li>
+      <br>
+      <br>
+			<li>
+				<a href="/volunteer.html">Get Involved</a>
+			</li>
+      			<li>
+				<a href="/contact.html">Contact Us</a>
+			</li>
+		</ul>
+	</navbar>
+
+<!-- all content goes here, seperated from navbar for easier styling purposes-->
+<body>
+  <!-- landing page, all sections in a page are classed under section and given unique id-->
+	<landingPage id="landing" class="section">
+    <!-- landing page image -->
+		<div class="landingImage">
+      <!-- https://unsplash.com/photos/A4Ax1ApccfA -->
+      <img src="landingImg.png" alt="Landing Image">
+    </div>
+    <!-- landing page content, where text and buttons are -->
+		<div class="landingContent">
+			<div class="landingInfo">
+				<h1>#Movement2020</h1>
+				<p>Join Us in our October campaign to help fight homelessness during Covid-19!
+					<br>
+      <br>
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      </p>
+      <br>
+      <!-- button links to volunteer page -->
+      <a href="/volunteer.html" class="landingButton">Join Us</a>
+      </div>
+    </div>
+	</landingPage>
+  <!-- about page -->
+	<aboutUsPage id="about" class="section">
+    <!-- about us content (text, etc) goes here -->
+		<div class="aboutUs">
+      <div class="aboutInfo">
+      <h1>About Us</h1>
+      <p>Join Us in our October campaign to help fight homelessness during Covid-19!
+      <br>
+      <br>
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      </p>
+      </div>
+				</div>
+        <!-- about us image goes here -->
+		<div class="aboutImg">
+      <img src="aboutImg.png" alt="About Us Image">
+    </div>
+    <!-- Content (mission/vision) -->
+    <!-- Referenced code used to learn about the use of radio to hide/show content -->
+		<!-- Referenced from https://codepen.io/MakiBM/pen/KgXzma -->
+		<div class="Content">
+    <!-- checked to specify default selected option, content-toggle to toggle between different content when either is clicked -->
+			<input type="radio" name="content-toggle" id="mission" checked="checked"> <label for="mission" tabindex="1">Mission</label>
+    <input type="radio" name="content-toggle" id="vision"> <label for="vision" tabindex="2">Vision</label>
+      <div id="aboutContent">
+    <div id="missionCont">
+      <div id="missionText">
+      <h2>Our Mission</h2>
+      <p>Provide good quality clothing and other essential items, free of charge, to the homeless and disadvantaged.</p>
+      </div>
+      <!-- https://unsplash.com/photos/pVmjvK44Dao -->
+        <img src="mission.jpg" alt="Mission Image">
+    </div>
+    <div id="visionCont">
+      <div id="missionText">
+      <h2>Our Vision</h2>
+      <p>To help the 100,000 homeless people in Australia. Furthermore because of COVID-19, unemployment is on the rise and we are likely to see a dramatic increase, in the number of people sleeping in cars and living on the street.</p>
+      </div>
+      <!-- https://unsplash.com/photos/4OFU9yxUvLc -->
+      <img src="vision.jpg" alt="Vision Image">
+    </div>
+  </div>
+    </div>
+	</aboutUsPage>
+  <!-- Movement page -->
+  <!-- Reference code were used to learn about the use of flex properties and flex-wrap -->
+  <!-- Flex animations were also referenced -->
+  <!-- Reference codes https://www.youtube.com/watch?v=m91pL94YLvg -->
+	<movementPage id="movement" class="section">
+		<div class="movementCard">
+			<h2>GIVE</h2>
+			<div class="caption">
+				<p>
+					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
+					text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+				</p>
+        <!-- <button type="button">More</button> -->
+			</div>
+      <!-- https://unsplash.com/photos/CQ4cMjZiPnw -->
+      <img src="movementImg_1.png" alt="MovementImg_1">
+		</div>
+		<div class="movementCard">
+			<h2>CARE</h2>
+			<div class ="caption">
+				<p>
+					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
+					text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+				</p>
+        <!-- <button type="button">More</button> -->
+			</div>
+            <!-- https://unsplash.com/photos/9322BcAazXM -->
+      <img src="movementImg_2.png" alt="MovementImg_2">
+		</div>
+		<div class="movementCard">
+			<h2>SUPPORT</h2>
+			<div class="caption">
+				<p>
+					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
+					text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+				</p>
+        <!-- <button type="button">More</button> -->
+			</div>
+            <!-- https://unsplash.com/photos/mjsML7JUebo -->
+      <img src="movementImg_3.png" alt="MovementImg_3">
+		</div>
+	</movementPage>
+  <!-- Volunteer page -->
+	<volunteerPage id="volunteer" class="section">
+    <!-- Div to contain all the cards -->
+		<div class="volunteerCards">
+    <!-- Flip-card is given same class and unique id to fill in the different content-->
+			<div id="flip1" class="flip-card">
+				<div class="flip-card-inner">
+    <!-- contains the front card before hover/click happens -->
+					<div class="flip-card-front">
+						<img src="https://www.pointsoflight.org/wp-content/uploads/2017/03/beach_clean_up_day_2016_-_vertical.jpg" alt="Avatar">
+    <!-- overlay is used to darken the image to make font more visible -->
+        <div class="overlay">
+        </div>
+                <h1>Contribute to what you believe!</h1>
+      </div>
+    <!-- back of flip card is only shown once hovered or clicked -->
+      <div class="flip-card-back">
+                <div class="flip-text">
+        <h2>John Doe</h2>
+        <p>Architect & Engineer</p>
+        <p>We love that guy</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- second flip card -->
+    <div id="flip2" class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="https://www.pointsoflight.org/wp-content/uploads/2017/03/beach_clean_up_day_2016_-_vertical.jpg" alt="Avatar">
+        <div class="overlay">
+        </div>
+                <h1>Learn New Skills!</h1>
+      </div>
+      <div class="flip-card-back">
+                <div class="flip-text">
+        <h2>John Doe</h2>
+        <p>Architect & Engineer</p>
+        <p>We love that guy</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- third flip card -->
+    <div id="flip3" class="flip-card" onclick="void(0)">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="https://www.pointsoflight.org/wp-content/uploads/2017/03/beach_clean_up_day_2016_-_vertical.jpg" alt="Avatar">
+        <div class="overlay">
+        </div>
+                <h1>Make Connections!</h1>
+      </div>
+      <div class="flip-card-back">
+        <div class="flip-text">
+        <h2>John Doe</h2>
+        <p>Architect & Engineer</p>
+        <p>We love that guy</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!-- Volunteer text to advertise volunteering and contains volunteer button -->
+  <div class="volunteerText">
+    <div class="volunteerInfo">
+    <h2>Volunteering</h2>
+    <p>Volunteer with us today to gain a new life experience, make change in the world we live in today.
+    <br>
+    <br>
+Start making your contribution to the society!
+</p>
+<br>
+<!-- redirects user to the volunteer page -->
+<a href="/volunteer.html" class="volButton">Volunteer</a>
+</div>
+  </div>
+</volunteerPage>
+<!-- donate page -->
+<donatePage id="donate" class="section">
+  <!-- frames of donate images -->
+  <donateImg>
+    <div id="donateImages">
+    <!-- https://unsplash.com/photos/K0E6E0a0R3A -->
+    <img src="donate_1.jpg" id="donate_1" alt="Donate Image">
+    <!-- https://unsplash.com/photos/3k3l2brxmwQ -->
+    <img src="donate_2.jpg" id="donate_2" alt="Donate Image">
+    <!-- https://unsplash.com/photos/3k3l2brxmwQ -->
+    <img src="donate_3.jpg" id="donate_3" alt="Donate Image">
+    </div>
+  </donateImg>
+  <!-- donation form for user to fill -->
+  <donateCont>
+        <donateCard>
+        <div id="donateDetails">
+        <h2>Donate</h2>
+        <p>Don’t have time to volunteer? Donating helps as much, we focus on clothes donation but with financial support, we will be able to run our opertaions better.<br><br>
+        With your donation, we will be able to operate better to help the homeless and needy, giving them essentials that they need.
+        </p>
+        <br>
+        <!-- https://codepen.io/Stockin/pen/bzdNOq -->
+        <div id="donateBtn">
+        <a href="http://www.paypal.com/" target="_blank" class="donateB">Paypal
+        <!-- span to create 4 sides of the square to animate -->
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        </a>
+        <a href="/contact.html" class="donateB">Others
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        </a>
+        </div>
+        </div>
+      </donateCard>
+  </donateCont>
+</donatePage>
+  </body>
+      <script src="script.js"></script>
+</html>

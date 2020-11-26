@@ -1,0 +1,216 @@
+contact {
+    background-image: url(contactBG.png);
+    background-color:#9AB8A1;
+   background-size: cover;
+    margin:0;
+  height:100%;
+  width:90%;
+  padding:0;
+  box-sizing: border-box;
+  float:right;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "contactText contactText contactForm contactForm"
+    "contactDetails contactDetails contactForm contactForm";
+}
+
+.contactForm { grid-area: contactForm; }
+
+.contactText { grid-area: contactText; }
+
+.contactDetails { 
+  position:relative;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:wrap;
+  /* margin:0 5em; */
+  grid-area: contactDetails; }
+
+.contactInfo {
+  width:90%;
+  position: absolute;
+  top: 80%;
+  left:10%;
+  transform: translate(0, -80%);
+}
+
+.aboutInfo p {
+  font-size:1.2em;
+}
+
+/*determine the size of the contact details cards*/
+.box {
+  position: relative;
+  width:300px;
+  height:150px;
+  margin:20px;
+  background: #fff;
+  box-shadow: 0px 30px 50px rgba(0,0,0,0.25);
+  border-radius:2%;
+  overflow: hidden;
+}
+
+/*front of card*/
+.imgBox {
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  transition:0.5s;
+  transform: scale(1) translateY(0);
+}
+
+/*moves the front card away when hovered*/
+.box:hover .imgBox {
+  transform: scale(1) translateY(-100%);
+}
+
+/*set icon size*/
+.imgBox img {
+  max-width:80px;
+}
+
+/* hidden card when not hovered*/
+.content {
+  position: relative;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+  transition: 0.5s;
+  background: #6B7E6F;
+  color:#fff;
+  transform: scale(1) translateY(calc(100% - 5px));
+}
+
+/* when hover show the hidden card*/
+.box:hover .content {
+  transform: scale(1);
+}
+
+/* determine the font size within the card*/
+.content h3 {
+  font-size:12px;
+}
+
+.content h4 {
+  font-size:8px;
+}
+
+.content p {
+  font-size:8px;
+}
+
+/* set icon size for the icon inside the hidden card*/
+.icon img {
+  max-width:60px;
+  filter:invert(1);
+}
+
+contact * {
+  position: relative;
+}
+
+.contactForm {
+  position:relative;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*set the style for the card*/
+.formSection {
+  display: flex;
+  justify-content:space-around;
+  align-items:center;
+  flex-direction:column;
+   width: 70%;
+  height: 70%; 
+  background-color: rgba(0,0,0,0.25); 
+  border-radius:1.5%;
+}
+
+/*style line and text*/
+.form {
+  width:80%;
+  height:2em;
+  position:relative;
+  overflow:hidden;
+  padding-top:3em;
+  margin-bottom:1em;
+}
+
+/*creates left margin for the input field*/
+.formInput {
+  position:relative;
+  height:100%;
+  left:10%;
+  width:100%;
+}
+
+/*set input and font color*/
+.form input {
+  background-color: transparent;
+  height:100%;
+  color: #fff;
+  border:none;
+  outline: none;
+}
+
+/*creates the line for input*/
+.form label {
+  position: absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  border-bottom:1px solid #fff; 
+}
+
+/*lines created when user is filling up the form*/
+.form label::after {
+  /*No additional content*/
+  content: "";
+  position: absolute;
+  width:100%;
+  height:100%;
+  left:0;
+  bottom:-1px;
+  border-bottom:3px solid #9AB8A1;
+  transform: translateX(-100%);
+}
+
+/*style the content name before user fill*/
+.content-name {
+position:absolute;
+bottom:0.1em;
+left:0px;
+transition: all 0.3s ease;
+color: #bcd2c1;
+font-weight:600;
+font-size:1em;
+}
+
+/*moves up the content name when user is filling it up*/
+.form input:focus + .label-name .content-name, .form input:valid + .label-name .content-name {
+transform:translateY(-150%);
+}
+
+.form input:focus + .label-name::after, .form input:valid + .label-name:after {
+  transform: translateX(0%);
+  transition: all 0.3s ease;
+}

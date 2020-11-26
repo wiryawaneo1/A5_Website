@@ -1,0 +1,817 @@
+/* sets the size of the document */
+html, body {
+  min-height:100%;
+    margin: 0;
+    height:100%;
+    width:100%;
+    padding:0;
+}
+
+/* hide the hamburger menu in full size/ non mobile size*/
+.hamburger {
+  display:none;
+}
+
+/* sets the scroll snap, proximity was used because the chrome currently has a bug with */
+/* scroll-snap being coded into html (only works if it's in div/containers) */
+html {
+scroll-snap-type: proximity;
+scroll-snap-points-y: repeat(100vh);
+scroll-snap-type: y proximity;
+  scroll-behavior: smooth;
+}
+
+/*Ensures the snap detection happens at the start (top) of each section*/
+.section {
+  scroll-snap-align: start;
+}
+
+/* sets navbar at the left side of the page, 10% width was given */
+navbar{
+  margin:0;
+  height:100%;
+  width:10%;
+  padding:0;
+  /*z-index were given to give out the overlapping effect (navbar on top of content) */
+  z-index:2;
+}
+
+/* set section height and width, float:right to make sure it is not overlapping with the navbar */
+.section {
+  margin:0;
+  height:100%;
+  width:90%;
+  padding:0;
+  float:right;
+}
+
+/* make scrollbar transparent */
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; 
+ }
+
+/* text sizing*/
+/* white text is used for MOST content */
+ h1 {
+  font-size:64px;
+  color:white;
+}
+
+h2 {
+  font-size: 52px;
+  color:white;
+}
+
+h3 {
+  font-size: 40px;
+  color:white;
+}
+
+p {
+  color:white;
+  font-size:18px;
+}
+
+/*Nav bar*/
+navbar {
+  background-color:#bcd2c1;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  /*position fixed to ensure navbar stays when scrolling*/
+  position: fixed;
+  top: 0;
+  /* display flex helps with positioning of the content inside the navbar*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  grid-template-areas:
+    "navbar";
+  }
+
+/*remove the link styles (color, underline)*/
+  navbar li {
+  list-style: none;
+}
+
+navbar ul {
+  padding: 0;
+}
+
+/*display block to give it better padding to seperate each a tag*/
+navbar li a {
+  text-decoration: none;
+  color:white;
+  display: block;
+  padding: 0.6rem 0.3rem;
+  font-weight: 400;
+  /*used when active, transitioning between colours and font weight*/
+  transition: all ease-out 250ms;
+}
+
+/*when user click on a certain page/section, the nav link changes color and font weight*/
+.active {
+  color: #BC8552;
+  font-weight: 600;
+}
+
+/* LANDING PAGE */
+landingPage {
+  /*background image to give off the blob effect*/
+    background-image: url(LandingBG.png);
+  /*actual background color for the page*/
+    background-color:#9AB8A1;
+  /*ensure that background covers the whole section*/
+   background-size: cover;
+  /*and ensure that background does not repeat*/
+    background-repeat: no-repeat;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "landingContent landingContent landingImage landingImage landingImage"
+    "landingContent landingContent landingImage landingImage landingImage"
+    "landingContent landingContent landingImage landingImage landingImage";
+}
+
+.landingImage {
+  grid-area: landingImage; }
+
+.landingImage img {
+  max-width: 100%;
+  /*height is responsive to the width ^ */
+  height: auto;
+  position:absolute;
+  right:0;
+  /*top 50% and transform 50% ensure content is centered properly*/
+  top:50%;
+  transform: translate(0, -50%);
+}
+
+.landingContent { grid-area: landingContent; }
+
+/*apply relative position to most landingPage child*/
+landingPage * {
+  position: relative;
+}
+
+/*positions the landing text on the left side and center of the page*/
+.landingInfo {
+  position: absolute;
+  top: 50%;
+  left:25%;
+  transform: translate(-25%, -50%);
+  margin:0 25px;
+}
+
+.landingInfo p {
+  font-size:1.2em;
+}
+
+.landingButton {
+  background-color: #4F4F4F; 
+  /* removes the button border*/
+  border: none;
+  color: white;
+  padding: 2.5% 2.5%;
+  width:30%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  position:absolute;
+  /*position button at right side of the text div*/
+  right:0;
+  cursor: pointer;
+  outline: none;
+  margin-left:3%;
+  border-radius:5%;
+}
+
+/*ABOUT US PAGE*/
+aboutUsPage {
+    background-image: url(aboutBG.png);
+    background-color:#9AB8A1;
+   background-size: cover;
+    background-repeat: no-repeat;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1f;
+  gap: 0px 0px;
+  grid-template-areas:
+    "aboutUs aboutUs aboutImg aboutImg"
+    "aboutUs aboutUs aboutImg aboutImg"
+    "Content Content Content Content"
+    "Content Content Content Content"
+    "Content Content Content Content";
+}
+
+.aboutUs {
+  grid-area: aboutUs; }
+
+.aboutImg {
+  overflow:hidden;
+  position:relative;
+  /*ensure that the image is vertically centered*/
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: aboutImg; }
+
+  .aboutImg img {
+  /*make image responsive to the width of the browser*/
+  max-width: 100%;
+  height: auto;
+  position:absolute;
+  }
+
+.Content {
+  /*centralise content*/
+  text-align:center;
+  grid-area: Content; }
+
+.aboutInfo {
+  /*position the about text*/
+  position: absolute;
+  top: 40%;
+  left:25%;
+  transform: translate(-25%, -40%);
+  margin:0 25px;
+}
+
+.aboutInfo p {
+  font-size:1.2em;
+}
+
+/*hides the radio button*/
+.Content input {
+  display: none;
+}
+
+/*make radio appear like a button*/
+.Content label{
+  display:inline-block;
+	text-decoration: none;
+	padding: 1% 1%;
+  border-radius:7%;
+	background-color: #798b7d;
+  color:#f5f5f5;
+  font-weight:400;
+  outline: none;
+}
+
+/*cursor change when hovering over "button*/
+.Content label:hover{
+ cursor: pointer;
+}
+
+/*if a radio is checked then background color changes*/
+ .Content input[type="radio"]:checked + label {
+   background-color: #378b49;
+   color: #fcfcfc
+ }
+
+/*set height and display for both mission and vision content (overlapping content)*/
+#missionCont, #visionCont {
+  height:100%;
+  	display: none;
+    position: relative;
+}
+
+/*set text to be on the left side of the page*/
+#missionText {
+  width:50%;
+  position: absolute;
+  top:40%;
+  transform: translateY(-40%);
+  text-align:left;
+  padding:2% 2%;
+}
+
+/*set image to be on the right side of the page*/
+#missionCont img {
+  display: block;
+  width:25%;
+  position: absolute;
+  right:12.5%;
+  top:45%;
+  transform: translateY(-45%);
+  height:auto;
+  border-radius:0.8em;
+}
+
+#visionCont img {
+  display: block;
+  width:25%;
+  position: absolute;
+  right:12.5%;
+  top:45%;
+  transform: translateY(-45%);
+  height:auto;
+  border-radius:0.8em;
+}
+
+#aboutContent {
+  height:100%;
+}
+
+/*if a radio is checked, then display block*/
+#mission:checked~#aboutContent div:nth-child(2),
+#vision:checked~#aboutContent div:nth-child(3) {
+	display: block;
+}
+
+/*if radio is not checked, then hide display*/
+#mission:checked~#aboutContent #default,
+#vision:checked~#aboutContent #default {
+	display:none;
+}
+
+aboutUsPage * {
+  position: relative;
+}
+
+/*MOVEMENT PAGE*/
+/*display flex to have flexible sizing for cards that is going to be created*/
+movementPage {
+    display:flex;
+  grid-area: movementCont;
+}
+
+/*make card the height of the whole section*/
+/* flex 1 to distribute the cards evenly*/
+.movementCard {
+  height:100%;
+  flex: 1;
+  box-sizing:border-radius;
+  transition: 0.6s;
+  position:relative;
+}
+
+/*gives different background color to various child properties*/
+.movementCard:nth-child(1) {
+background-color:#89A790;
+}
+
+.movementCard:nth-child(2) {
+  background-color:#79927F;
+}
+
+.movementCard:nth-child(3) {
+  background-color:#6B7E6F;
+}
+
+/*Give properties and transition properties to text (center text)*/
+.movementCard h2{
+  text-align:center;
+  font-weight:400;
+  color:white;
+  transition: width .8s ease;
+  padding-left:50px;
+}
+
+
+.caption {
+  max-width:400px;
+  font-size:12px;
+  padding-left:50px;
+  margin:25px;
+  display:none;
+}
+
+/*put image at the bottom right with lower brightness (animation preset)*/
+.movementCard img {
+  position:absolute;
+  right: 0;
+  bottom: 0;
+  height:30%;
+  -webkit-filter: brightness(70%);
+  filter: brightness(70%);
+  transition: all 0.6s ease;
+}
+
+/*only for web sizes, the card grows when hovered over*/
+@media only screen
+  and (min-width: 768px)  {
+.movementCard:hover {
+  flex-grow:2.5;
+}
+
+/*shows the caption when hovered*/
+.movementCard:hover .caption {
+  display:block;
+}
+
+/*moves the h2 title when hovered*/
+.movementCard:hover h2 {
+  width: 0;
+  margin-left:25px;
+}
+
+/*set the brightness to 100% when hovered*/
+.movementCard:hover img {
+-webkit-filter: brightness(100%);
+filter: brightness(100%);
+}
+}
+
+movementPage * {
+  /* border: 1px solid red; */
+  position: relative;
+}
+
+
+/*VOLUNTEER PAGE*/
+volunteerPage {
+    background-image: url(LandingBG.png);
+    background-color:#9AB8A1;
+   background-size: cover;
+    background-repeat: no-repeat;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "volunteerText volunteerText volunteerCards volunteerCards volunteerCards"
+    "volunteerText volunteerText volunteerCards volunteerCards volunteerCards"
+    "volunteerText volunteerText volunteerCards volunteerCards volunteerCards";
+}
+
+.volunteerCards { grid-area: volunteerCards; }
+
+.volunteerText {
+grid-area: volunteerText; }
+
+volunteerPage * {
+  position: relative;
+}
+.volunteerCards {
+    display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+/* Flip Flip Card !! */
+/*sets the property of the overall flip card*/
+.flip-card {
+  background-color: transparent;
+  width: 27%;
+  height: 70%;
+  perspective: 1000px;
+  border-radius: 15px;
+  float:right;
+  top:15%;
+  margin:0 2%;
+}
+
+/*sets property for the div containing the card (background,etc)*/
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 15px;
+}
+
+/*when hover, rotates 180 degree but is hidden*/
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 15px;
+}
+
+/*style for the back of the card*/
+.flip-card-back {
+  background-color: #FFEFE0;
+  transform: rotateY(180deg);
+  border-radius: 15px;
+}
+
+/*give all the child property the same color for text*/
+.flip-card-back * {
+  color: #4F4F4F;
+}
+
+/*set image size and give it a grayscale filter*/
+.flip-card-front > img {
+  width:100%;
+  height: 100%;
+  filter: grayscale(50%);
+  border-radius: 15px;
+}
+
+/*overlay on top of the image but bottom of text so that it would not affect text color*/
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.3;
+  transition: .5s ease;
+  background-color: black;
+  border-radius: 15px;
+}
+
+/*EDIT THIS*/
+.flip-card-front > h1 {
+  position: absolute;
+  /*change this*/
+    top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height:100%;
+    color: white;
+  font-size: 20px;
+  text-align: center;
+}
+
+/*text div given height of 100*/
+.flip-text {
+  height:100%;
+}
+
+/*sets the position of the text*/
+.volunteerInfo {
+  position: absolute;
+  top: 50%;
+  left:25%;
+  transform: translate(-25%, -50%);
+  margin:0 25px;
+}
+
+/*set the content text font size*/
+.volunteerInfo p {
+  font-size:1.2em;
+}
+
+/* styling for the volunteer button*/
+.volButton {
+  background-color: #4F4F4F;
+  border: none;
+  color: white;
+  padding: 2.5% 2.5%;
+  width:30%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  position:absolute;
+  right:0;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  margin-left:3%;
+  border-radius:5%;
+}
+
+
+/*Donate Page*/
+donatePage {
+    background-image: url(aboutBG.png);
+    background-color:#9AB8A1;
+   background-size: cover;
+  background-repeat: no-repeat;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "donateImg donateImg donateCont donateCont"
+    "donateImg donateImg donateCont donateCont"
+    "donateImg donateImg donateCont donateCont";
+}
+
+donateImg { grid-area: donateImg; }
+
+donateCont { grid-area: donateCont; }
+
+
+donatePage * {
+  position: relative;
+}
+
+/* create donate card */
+donateCard {
+  height:70%;
+  width:70%;
+  background-color:white;
+  position: absolute;
+  top:15%;
+  border-radius:2em;
+  background-image: url(noise.png);
+}
+
+/* donate content centered */
+donateCont {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+/* make all the font color */
+#donateDetails > * {
+  color:black;
+}
+
+/*create div for the donate card content*/
+#donateDetails {
+  display:block;
+  position:relative;
+  height:90%;
+  width:80%;
+  left: 50%;
+  top:50%;
+  transform: translate(-50%, -50%);
+}
+
+/*style donate card text*/
+#donateDetails p {
+  position: absolute;
+  top: 30%;
+  transform: translate(0, -30%);
+}
+
+/*style for the donate buttons*/
+#donateBtn {
+   display: flex;
+  position: absolute;
+  top: 80%;
+  transform: translate(0, -80%);
+  width:100%;
+  height:15%;
+  justify-content: space-around;
+  text-align:center;
+}
+
+/*styling the lines*/
+.donateB {
+  display:block;
+  position:relative;
+  width:6em;
+  height:4em;
+  line-height:4em;
+  font-size:1.3em;
+  text-align:center;
+  text-decoration:none;
+  color:#404040;
+  margin: 0 30px;
+  transition:.5s;
+  border:none;
+  background-color: Transparent;
+  font-weight:500;
+  outline: none;
+  cursor: pointer;
+}
+
+/*set transition for the animated box*/
+.donateB span {
+  position:absolute;
+  transition: transform .5s;
+}
+
+/*top and bottom box lines*/
+.donateB span:nth-child(1),
+.donateB span:nth-child(3) {
+  width:100%;
+  height:3px;
+  background:#404040;
+}
+
+/*top line starts from left*/
+.donateB span:nth-child(1) {
+  top:0;
+  left:0;
+  transform-origin: left;
+}
+
+/*shortern the length by half*/
+.donateB:hover span:nth-child(1) {
+  transform: scaleX(0.5);
+  transform-origin: left;
+  transition:transform .5s;
+}
+
+/*bottom line starts from left*/
+.donateB span:nth-child(3) {
+  bottom:0;
+  left:0;
+  transform-origin: right;
+}
+
+/*shortern the length by half*/
+.donateB:hover span:nth-child(3) {
+  transform: scaleX(0.5);
+  transform-origin: right;
+  transition:transform .5s;
+}
+
+/*create left and right line*/
+.donateB span:nth-child(2),
+.donateB span:nth-child(4){
+  width:3px;
+  height:100%;
+  background:#404040;
+}
+
+/*create left line from top*/
+.donateB span:nth-child(2) {
+  top:0;
+  left:0;
+  transform:scale(1);
+  transform-origin: top;
+}
+
+/*shortern length by half*/
+.donateB:hover span:nth-child(2) {
+  transform: scale(0.5);
+  transform-origin: top;
+  transition:transform .5s;
+}
+
+/*create right line from bottom*/
+.donateB span:nth-child(4) {
+  bottom:0;
+  right:0;
+  transform:scale(1);
+  transform-origin: bottom;
+}
+
+/*shorten line by half*/
+.donateB:hover span:nth-child(4) {
+  transform: scale(0.5);
+  transform-origin: bottom;
+  transition:transform .5s;
+}
+
+/*set the color of the box*/
+.donateB:nth-child(1) {
+  color:black;
+}
+
+/*set the color of the box when hovered*/
+.donateB:nth-child(1):hover {
+  color: #183168;
+  font-weight:600;
+}
+
+ .donateB:nth-child(1):hover span {
+  background-color: #183168;
+
+} 
+
+/*set the color of the box*/
+.donateB:nth-child(2) {
+  color: black;
+}
+
+/*set the color of the box when hovered*/
+.donateB:nth-child(2):hover {
+  color: #BC8552;
+    font-weight:600;
+}
+
+.donateB:nth-child(2):hover span {
+  background-color: #BC8552;
+}
+
+#donateImages {
+  height:100%;
+  position:relative;
+}
+
+/*position image of donate image grid*/
+#donate_1 {
+  position:absolute;
+  height:auto;
+  width:50%;
+  right:0;
+  bottom:0;
+}
+
+#donate_2 {
+  position:absolute;
+  height:auto;
+  width:50%;
+  right:0;
+}
+
+#donate_3{
+  position:absolute;
+  height:auto;
+  width:50%;
+}
