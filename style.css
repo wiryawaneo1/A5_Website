@@ -37,7 +37,8 @@ navbar{
 }
 
 /* set section height and width, float:right to make sure it is not overlapping with the navbar */
-.section {
+/* set section height and width, float:right to make sure it is not overlapping with the navbar */
+landingPage, aboutUsPage, volunteerPage, donatePage, movementPage {
   margin:0;
   height:100%;
   width:90%;
@@ -48,7 +49,7 @@ navbar{
 /* make scrollbar transparent */
 ::-webkit-scrollbar {
     width: 0px;
-    background: transparent; 
+    background: transparent;
  }
 
 /* text sizing*/
@@ -140,6 +141,9 @@ landingPage {
 .landingImage {
   grid-area: landingImage; }
 
+.landingImage #landingM {
+  display:none;
+}
 .landingImage img {
   max-width: 100%;
   /*height is responsive to the width ^ */
@@ -172,7 +176,7 @@ landingPage * {
 }
 
 .landingButton {
-  background-color: #4F4F4F; 
+  background-color: #4F4F4F;
   /* removes the button border*/
   border: none;
   color: white;
@@ -457,7 +461,7 @@ volunteerPage * {
 /* Flip Flip Card !! */
 /*sets the property of the overall flip card*/
 .flip-card {
-  background-color: transparent;
+  /* background-color: red; */
   width: 27%;
   height: 70%;
   perspective: 1000px;
@@ -474,7 +478,8 @@ volunteerPage * {
   height: 100%;
   transition: transform 0.6s;
   transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  background-color:#89A790;
+  /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
   border-radius: 15px;
 }
 
@@ -504,12 +509,21 @@ volunteerPage * {
   color: #4F4F4F;
 }
 
+.flip-card-front {
+  height:100%;
+}
+
+.flip-card-front h1 {
+  margin-top:100%
+}
+
 /*set image size and give it a grayscale filter*/
 .flip-card-front > img {
   width:100%;
-  height: 100%;
+  height: auto;
   filter: grayscale(50%);
-  border-radius: 15px;
+  bottom:0;
+  position:absolute;
 }
 
 /*overlay on top of the image but bottom of text so that it would not affect text color*/
@@ -544,6 +558,8 @@ volunteerPage * {
 /*text div given height of 100*/
 .flip-text {
   height:100%;
+  margin:0 5%;
+  width:90%;
 }
 
 /*sets the position of the text*/
@@ -772,7 +788,7 @@ donateCont {
  .donateB:nth-child(1):hover span {
   background-color: #183168;
 
-} 
+}
 
 /*set the color of the box*/
 .donateB:nth-child(2) {
@@ -791,27 +807,12 @@ donateCont {
 
 #donateImages {
   height:100%;
-  position:relative;
 }
 
 /*position image of donate image grid*/
-#donate_1 {
+#donateImages img {
+  top:10%;
   position:absolute;
   height:auto;
-  width:50%;
-  right:0;
-  bottom:0;
-}
-
-#donate_2 {
-  position:absolute;
-  height:auto;
-  width:50%;
-  right:0;
-}
-
-#donate_3{
-  position:absolute;
-  height:auto;
-  width:50%;
+  width:100%;
 }

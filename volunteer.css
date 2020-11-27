@@ -2,10 +2,10 @@ volunteerJoin {
       background-image: url(contactBG.png);
     background-color:#9AB8A1;
    background-size: cover;
-     height: 100%; 
-  width:90%; 
+     height: 100%;
+  width:90%;
   margin: 0;
-  float:right; 
+  float:right;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
@@ -14,6 +14,7 @@ volunteerJoin {
     "volunteerForm volunteerForm volunteerImg volunteerImg"
     "volunteerForm volunteerForm volunteerImg volunteerImg"
     "volunteerForm volunteerForm volunteerImg volunteerImg";
+  overflow: hidden;
 }
 
 volunteerImg { grid-area: volunteerImg; }
@@ -25,7 +26,7 @@ volunteerImg img {
   height:auto;
   width:80%;
 }
-volunteerForm { 
+volunteerForm {
     position:relative;
   display:flex;
   justify-content: center;
@@ -47,4 +48,176 @@ volunteerForm {
 
 volunteerJoin * {
   position: relative;
+}
+
+/*set the style for the card*/
+.formSection {
+  /* display: flex;
+  justify-content:space-around;
+  align-items:center; */
+  flex-direction:column;
+   width: 80%;
+  height: 80%;
+  background-color: rgba(0,0,0,0.25);
+  border-radius:1.5%;
+}
+
+.button {
+  border: 5px solid;
+  background-color: transparent;
+  color: black;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  border-color: #6B7E6F;
+color: #6B7E6F;
+position:absolute;
+/* right:20%; */
+margin-top:15%;
+margin-bottom:10%;
+margin-left:55%;
+}
+
+/*style line and text*/
+.form {
+  width:80%;
+  height:2em;
+  position:relative;
+  overflow:hidden;
+  padding-top:3em;
+  margin-bottom:1em;
+  left:0;
+}
+
+/*creates left margin for the input field*/
+.formInput {
+  position:relative;
+  height:100%;
+  left:10%;
+  width:100%;
+}
+
+/*set input and font color*/
+.form input {
+  background-color: transparent;
+  height:100%;
+  color: #fff;
+  border:none;
+  outline: none;
+}
+
+/*creates the line for input*/
+.form label {
+  position: absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+  border-bottom:1px solid #fff;
+}
+
+/*lines created when user is filling up the form*/
+.form label::after {
+  /*No additional content*/
+  content: "";
+  position: absolute;
+  width:100%;
+  height:100%;
+  left:0;
+  bottom:-1px;
+  border-bottom:3px solid #6B7E6F;
+  transform: translateX(-100%);
+}
+
+/*style the content name before user fill*/
+.content-name {
+position:absolute;
+bottom:0.1em;
+left:5%;
+transition: all 0.3s ease;
+color: #6B7E6F;
+font-weight:600;
+font-size:1em;
+}
+
+/*moves up the content name when user is filling it up*/
+.form input:focus + .label-name .content-name, .form input:valid + .label-name .content-name {
+transform:translateY(-150%);
+}
+
+.form input:focus + .label-name::after, .form input:valid + .label-name:after {
+  transform: translateX(0%);
+  transition: all 0.3s ease;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  top:30%;
+  left:3%;
+  margin: 70px auto;
+  padding: 20px;
+  background: #9AB8A1;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup h3 {
+  margin-top: 0;
+  color: white;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+.popup .close:hover {
+  color: white;
+}
+
+@media screen and (max-width: 768px){
+  .popup{
+    width: 70%;
+  }
+  .overlay {
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  .button {
+    border: 5px solid;
+    background-color: transparent;
+    color: black;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    border-color: #6B7E6F;
+  color: #6B7E6F;
+  position:absolute;
+  /* right:20%; */
+  margin-top:30%;
+  margin-bottom:10%;
+  margin-left:30%;
+  }
 }

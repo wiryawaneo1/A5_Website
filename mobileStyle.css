@@ -70,9 +70,16 @@ body {
     .landingImage {
       grid-area: landingImage; }
 
-    .landingImage img {
+    .landingImage #landingW {
       display:none;
     }
+
+        .landingImage #landingM {
+      display:block;
+      position:absolute; 
+      margin-top:20%;
+    }
+
 
     .landingContent {
       width:100%;
@@ -322,7 +329,7 @@ body {
     }
 
     .caption p {
-      font-size: 1.2em;
+      font-size: 1em;
     }
 
     .movementCard img {
@@ -486,6 +493,10 @@ body {
 
     .flip-text {
       height:100%;
+    }
+    
+    .spacing {
+      display:none;
     }
 
 
@@ -729,7 +740,7 @@ body {
 volunteerImg img {
   display:none;
 }
-volunteerForm { 
+volunteerForm {
     position:relative;
   display:flex;
   justify-content: center;
@@ -789,13 +800,13 @@ contact * {
   left: 0;
 } */
 
-.contactForm { 
+.contactForm {
   grid-area: contactForm; }
 
 .contactText {
   grid-area: contactText; }
 
-.contactDetails { 
+.contactDetails {
   /* margin:0 5em; */
   grid-area: contactDetails; }
 
@@ -896,7 +907,7 @@ contact * {
   align-items:center;
   flex-direction:column;
    width: 80%;
-  height: 70%; 
+  height: 70%;
   background-color: transparent
 }
 
@@ -935,7 +946,7 @@ contact * {
   width:100%;
   height:100%;
   pointer-events:none;
-  border-bottom:1px solid #fff; 
+  border-bottom:1px solid #fff;
 }
 
 .form label::after {
